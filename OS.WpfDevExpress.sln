@@ -15,6 +15,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OS.WpfDevExpress.Domain", "Domain\OS.WpfDevExpress.Domain.csproj", "{5D0726A2-A02A-474D-B040-A03F6A1D8803}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FunWithDxMvvm", "FunWithDxMvvm\FunWithDxMvvm.csproj", "{DB1BA15F-7D94-4199-9C0F-9AD18E6C51C4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,10 @@ Global
 		{5D0726A2-A02A-474D-B040-A03F6A1D8803}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5D0726A2-A02A-474D-B040-A03F6A1D8803}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5D0726A2-A02A-474D-B040-A03F6A1D8803}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB1BA15F-7D94-4199-9C0F-9AD18E6C51C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB1BA15F-7D94-4199-9C0F-9AD18E6C51C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB1BA15F-7D94-4199-9C0F-9AD18E6C51C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB1BA15F-7D94-4199-9C0F-9AD18E6C51C4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -39,6 +45,7 @@ Global
 		{F201D2D2-FFF1-49BF-8AC4-F01F069ED961} = {09419F3F-AE94-4CF1-BFD0-ED9C8EC381AE}
 		{828362D8-CAE0-464B-A57A-3D6A72162FDF} = {1B568D33-7DFC-49F7-960D-7EDCAF0F9714}
 		{5D0726A2-A02A-474D-B040-A03F6A1D8803} = {AC212F30-A525-48F4-BCDC-B4662E922492}
+		{DB1BA15F-7D94-4199-9C0F-9AD18E6C51C4} = {09419F3F-AE94-4CF1-BFD0-ED9C8EC381AE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8D4A6E1E-FB2A-4032-8FEC-5751DADDB653}

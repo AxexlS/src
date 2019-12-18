@@ -40,5 +40,22 @@ namespace OS.WpfDevExpress.Domain.CsvRopository.Data
                 }
             }
         }
+
+        public void Write()
+        {
+            try
+            {
+                using (var streamWriter = new StreamWriter(PathToFile))
+                using (var csv = new CsvWriter(streamWriter))
+                {
+                    csv.WriteRecords(Employees);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                throw;
+            }          
+        }
     }
 }

@@ -38,7 +38,7 @@ namespace OS.WpfDevExpress.Domain.CsvRopository
 
         public void Save()
         {
-            throw new NotImplementedException();
+            dataContext.Write();
         }
 
         public void Update(Employee item)

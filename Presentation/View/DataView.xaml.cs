@@ -27,5 +27,19 @@ namespace OS.FunWith.WpfDevExpress.View
         }
 
         public IEnumerable<Employee> MyProperty { get; set; }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var t = DataContext;
+        }
+
+        private void GridControl_SelectionChanged(object sender, DevExpress.Xpf.Grid.GridSelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void TableView_CellValueChanged(object sender, DevExpress.Xpf.Grid.CellValueChangedEventArgs e)
+        {
+        }
     }
 }

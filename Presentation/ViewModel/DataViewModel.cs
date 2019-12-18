@@ -1,4 +1,5 @@
-﻿using OS.WpfDevExpress.Domain.CsvRopository;
+﻿using DevExpress.Mvvm;
+using OS.WpfDevExpress.Domain.CsvRopository;
 using OS.WpfDevExpressPlc.Domain.Entities;
 using System;
 using System.Collections.Generic;
@@ -9,11 +10,9 @@ using System.Threading.Tasks;
 
 namespace OS.FunWith.WpfDevExpress.ViewModel
 {
-    public class DataViewModel : INotifyPropertyChanged
+    public class DataViewModel : ViewModelBase
     {
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        public CsvEmployeeRepository EmployeeRepository { get; set; }
+        private CsvEmployeeRepository EmployeeRepository { get; set; }
 
         public DataViewModel()
         {
@@ -25,6 +24,11 @@ namespace OS.FunWith.WpfDevExpress.ViewModel
             get
             {
                 return EmployeeRepository.GetItems();
+            }
+            set
+            {
+                EmployeeRepository.Save();
+                
             }
         }
     }
