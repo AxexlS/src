@@ -1,4 +1,5 @@
-﻿using OS.WpfDevExpressPlc.Domain.Entities;
+﻿using OS.FunWith.WpfDevExpress.ViewModel;
+using OS.WpfDevExpressPlc.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -40,6 +41,7 @@ namespace OS.FunWith.WpfDevExpress.View
 
         private void TableView_CellValueChanged(object sender, DevExpress.Xpf.Grid.CellValueChangedEventArgs e)
         {
+            //((DataViewModel)DataContext).
         }
     }
 }

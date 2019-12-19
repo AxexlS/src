@@ -10,7 +10,7 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
 
-        <view:DataView/>
+        <view:DataView Margin="0,-1,0,0"/>
 
     </Grid>
 </Window>

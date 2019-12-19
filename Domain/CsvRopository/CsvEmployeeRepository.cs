@@ -18,6 +18,7 @@ namespace OS.WpfDevExpress.Domain.CsvRopository
         public void Create(Employee item)
         {
             throw new NotImplementedException();
+            
         }
 
         public void Delete(int id)
@@ -30,7 +31,7 @@ namespace OS.WpfDevExpress.Domain.CsvRopository
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Employee> GetItems()
+        public ICollection<Employee> GetItems()
         {
             dataContext.Read();
             return dataContext.Employees;

@@ -12,7 +12,7 @@ namespace OS.WpfDevExpress.Domain.CsvRopository.Data
         public string PathToFile { get; private set; }
         public string Delimiter { get; private set; }
 
-        public IEnumerable<Employee> Employees { get; set; }
+        public ICollection<Employee> Employees { get; set; }
 
         public EmployeeContext(string pathToFile, string delimiter = ",")
         {

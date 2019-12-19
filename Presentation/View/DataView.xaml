@@ -17,14 +17,21 @@
     <UserControl.DataContext>
         <ViewModel:DataViewModel/>
     </UserControl.DataContext>
+    
     <Grid>
-
-        <dxg:GridControl AutoGenerateColumns="AddNew" EnableSmartColumnsGeneration="True" SelectionChanged="GridControl_SelectionChanged" ItemsSource="{Binding Employees}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        <dxg:GridControl Grid.Row="0" AutoGenerateColumns="AddNew" EnableSmartColumnsGeneration="True" SelectionChanged="GridControl_SelectionChanged" SelectedItem="{Binding SelecteItem}" ItemsSource="{Binding Employees}" SelectionMode="Cell">
             <dxg:GridControl.View>
-                <dxg:TableView CellValueChanged="TableView_CellValueChanged" ShowTotalSummary="True"/>
+                <dxg:TableView CellValueChanged="TableView_CellValueChanged" ShowTotalSummary="True" />
             </dxg:GridControl.View>
         </dxg:GridControl>
-        <Button Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
 
+        <StackPanel Orientation="Horizontal" Grid.Row="1">
+            <Button Content="Save changes" Command="{Binding SaveData}" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="75" Click="Button_Click"/>
+            <Button Content="Add Employee" Command="{Binding AddEmployee}" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="75" Click="Button_Click"/>
+        </StackPanel>
     </Grid>
 </UserControl>
