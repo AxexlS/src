@@ -1,13 +1,18 @@
 ﻿using CsvHelper.Configuration.Attributes;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace OS.WpfDevExpressPlc.Domain.Entities
 {
     public class Employee
     {
-        [Name("First name")]
+        [Name("FirstName")]
+        [ReadOnly(true)]
+        [StringLengthAttribute(50, ErrorMessage = "Please input name")]
+        //[RequiredAttribute(false, ErrorMessage = "Please input name")]
         public string FirstName { get; set; }
 
-        [Name("Last name")]
+        [Name("LastName")]
         public string LastName { get; set; }
 
         [Name("Position")]
@@ -16,7 +21,8 @@ namespace OS.WpfDevExpressPlc.Domain.Entities
         [Name("Office")]
         public string Office { get; set; }
 
-        [Name("Start date")]
+        [Name("StartDate")]
+
         public string StartDate { get; set; }
 
         [Name("Salary")]

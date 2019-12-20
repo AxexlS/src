@@ -1,6 +1,4 @@
-﻿using System;
-using DevExpress.Mvvm.DataAnnotations;
-using DevExpress.Mvvm;
+﻿using DevExpress.Mvvm.DataAnnotations;
 
 namespace FunWithDxMvvm.ViewModels
 {

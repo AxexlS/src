@@ -55,7 +55,7 @@ namespace OS.WpfDevExpress.Domain.CsvRopository.Data
             {
                 Console.WriteLine(ex.ToString());
                 throw;
-            }          
+            }
         }
     }
 }

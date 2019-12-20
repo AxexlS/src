@@ -7,10 +7,10 @@ namespace OS.WpfDevExpress.Domain.Repository
         where T : class
     {
         ICollection<T> GetItems();
-        T GetEmployee(int id);
+        T GetEmployee(T item);
         void Create(T item);
         void Update(T item);
-        void Delete(int id);
+        void Delete(T item);
         void Save();
     }
 }

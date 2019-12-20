@@ -3,32 +3,39 @@ using OS.WpfDevExpress.Domain.Repository;
 using OS.WpfDevExpressPlc.Domain.Entities;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace OS.WpfDevExpress.Domain.CsvRopository
 {
     public class CsvEmployeeRepository : IRepository<Employee>
     {
-        EmployeeContext dataContext;
+        private EmployeeContext dataContext;
 
         public CsvEmployeeRepository()
         {
+            // TODO : Inject path of file
             dataContext = new EmployeeContext("..\\..\\..\\..\\data\\Employees.csv");
         }
 
         public void Create(Employee item)
         {
-            throw new NotImplementedException();
-            
+            dataContext.Employees.Add(item);
         }
 
-        public void Delete(int id)
+        public void Delete(Employee item)
         {
-            throw new NotImplementedException();
+            if (item != null)
+            {
+                dataContext.Employees.Remove(FindEmployee(item));
+            }
         }
 
-        public void Dispose()
+        public Employee GetEmployee(Employee item)
         {
-            throw new NotImplementedException();
+            return dataContext.Employees.FirstOrDefault(i => i.FirstName == item.FirstName &&
+                                                      i.LastName == item.LastName &&
+                                                      i.Office == item.Office &&
+                                                      i.Position == item.Position);
         }
 
         public ICollection<Employee> GetItems()
@@ -44,12 +51,28 @@ namespace OS.WpfDevExpress.Domain.CsvRopository
 
         public void Update(Employee item)
         {
+            //var existingEmployee = dataContext.Employees.FirstOrDefault(i => i.FirstName == item.FirstName &&
+            //                                          i.LastName == item.LastName &&
+            //                                          i.Office == item.Office &&
+            //                                          i.Position == item.Position);
+            //dataContext.Employees.Remove(existingEmployee);
+            //dataContext.Employees.Add(item);
+
             throw new NotImplementedException();
         }
 
-        Employee IRepository<Employee>.GetEmployee(int id)
+        public void Dispose()
         {
-            throw new NotImplementedException();
+            dataContext.Write();
+            dataContext = null;
+        }
+
+        private Employee FindEmployee(Employee item)
+        {
+            return dataContext.Employees.FirstOrDefault(i => i.FirstName == item.FirstName &&
+                                                      i.LastName == item.LastName &&
+                                                      i.Office == item.Office &&
+                                                      i.Position == item.Position);
         }
     }
 }

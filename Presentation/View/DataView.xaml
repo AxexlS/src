@@ -23,15 +23,41 @@
             <RowDefinition Height="1*" />
             <RowDefinition Height="auto" />
         </Grid.RowDefinitions>
-        <dxg:GridControl Grid.Row="0" AutoGenerateColumns="AddNew" EnableSmartColumnsGeneration="True" SelectionChanged="GridControl_SelectionChanged" SelectedItem="{Binding SelecteItem}" ItemsSource="{Binding Employees}" SelectionMode="Cell">
+        
+        <dxg:GridControl Grid.Row="0" 
+                         EnableSmartColumnsGeneration="True"
+                         
+                         SelectedItem="{Binding SelectedItem}" 
+                         ItemsSource="{Binding Employees}"
+                         SelectionMode="Cell">
             <dxg:GridControl.View>
-                <dxg:TableView CellValueChanged="TableView_CellValueChanged" ShowTotalSummary="True" />
+                <dxg:TableView ShowTotalSummary="True" />
             </dxg:GridControl.View>
+            <dxg:GridColumn FieldName="FirstName"/>
+            <dxg:GridColumn FieldName="LastName"/>
+            <dxg:GridColumn FieldName="Position"/>
+            <dxg:GridColumn FieldName="Office"/>
+            <dxg:GridColumn FieldName="StartDate"/>
+            <dxg:GridColumn FieldName="Salary"/>
+
         </dxg:GridControl>
 
         <StackPanel Orientation="Horizontal" Grid.Row="1">
-            <Button Content="Save changes" Command="{Binding SaveData}" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="75" Click="Button_Click"/>
-            <Button Content="Add Employee" Command="{Binding AddEmployee}" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="75" Click="Button_Click"/>
+            <Button Content="Save changes" 
+                    Command="{Binding SaveData}"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Bottom"
+                    Width="150" />
+            <Button Content="Add Employee"
+                    Command="{Binding AddEmployee}"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Bottom"
+                    Width="150" />
+            <Button Content="Remove Employee"
+                    Command="{Binding RemoveEmployee}"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Bottom"
+                    Width="150" />
         </StackPanel>
     </Grid>
 </UserControl>

@@ -7,7 +7,7 @@
         xmlns:dxpg="http://schemas.devexpress.com/winfx/2008/xaml/pivotgrid" xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
     xmlns:view="clr-namespace:OS.FunWith.WpfDevExpress.View" x:Class="OS.FunWith.WpfDevExpress.MainWindow"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="OSO.DxGridControl.Demo" Height="450" Width="800">
     <Grid>
 
         <view:DataView Margin="0,-1,0,0"/>
