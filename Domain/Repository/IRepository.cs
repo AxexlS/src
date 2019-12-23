@@ -7,7 +7,7 @@ namespace OS.WpfDevExpress.Domain.Repository
         where T : class
     {
         ICollection<T> GetItems();
-        T GetEmployee(T item);
+        T GetItem(T item);
         void Create(T item);
         void Update(T item);
         void Delete(T item);

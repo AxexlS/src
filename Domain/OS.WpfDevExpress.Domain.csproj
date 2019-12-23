@@ -45,12 +45,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CsvReaders\MyCsvReader.cs" />
     <Compile Include="CsvRopository\CsvEmployeeRepository.cs" />
     <Compile Include="Data\EmployeeContext.cs" />
     <Compile Include="Data\IDataContext.cs" />
     <Compile Include="Entities\Employee.cs" />
-    <Compile Include="Entities\Vehicle.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\IRepository.cs" />
   </ItemGroup>

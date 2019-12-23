@@ -17,16 +17,15 @@
     <UserControl.DataContext>
         <ViewModel:DataViewModel/>
     </UserControl.DataContext>
-    
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*" />
-            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
         
         <dxg:GridControl Grid.Row="0" 
                          EnableSmartColumnsGeneration="True"
-                         
                          SelectedItem="{Binding SelectedItem}" 
                          ItemsSource="{Binding Employees}"
                          SelectionMode="Cell">
@@ -42,7 +41,7 @@
 
         </dxg:GridControl>
 
-        <StackPanel Orientation="Horizontal" Grid.Row="1">
+        <StackPanel Orientation="Horizontal" Margin="10" Background="Green" VerticalAlignment="Center" Grid.Row="1">
             <Button Content="Save changes" 
                     Command="{Binding SaveData}"
                     HorizontalAlignment="Left"

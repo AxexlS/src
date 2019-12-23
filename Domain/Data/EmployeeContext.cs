@@ -9,10 +9,15 @@ namespace OS.WpfDevExpress.Domain.CsvRopository.Data
 {
     public class EmployeeContext
     {
+        #region Propperty
+
         public string PathToFile { get; private set; }
         public string Delimiter { get; private set; }
-
         public ICollection<Employee> Employees { get; set; }
+
+        #endregion
+
+        #region Ctor
 
         public EmployeeContext(string pathToFile, string delimiter = ",")
         {
@@ -28,6 +33,10 @@ namespace OS.WpfDevExpress.Domain.CsvRopository.Data
                 throw;
             }
         }
+
+        #endregion
+
+        #region Methods
 
         public void Read()
         {
@@ -57,5 +66,7 @@ namespace OS.WpfDevExpress.Domain.CsvRopository.Data
                 throw;
             }
         }
+
+        #endregion
     }
 }

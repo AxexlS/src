@@ -2,14 +2,14 @@
 using OS.WpfDevExpress.Domain.CsvRopository;
 using OS.WpfDevExpressPlc.Domain.Entities;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
 using System.Windows.Input;
 
 namespace OS.FunWith.WpfDevExpress.ViewModel
 {
-    public class DataViewModel : INotifyPropertyChanged
+    public class DataViewModel : BaseViewModel
     {
+        #region Property
+
         public ICollection<Employee> Employees
         {
             get
@@ -18,15 +18,22 @@ namespace OS.FunWith.WpfDevExpress.ViewModel
             }
         }
 
+        public Employee SelectedItem { get; set; }
+
+        private CsvEmployeeRepository EmployeeRepository { get; set; }
+        #endregion
+
+        #region Command
+
         public ICommand SaveData { get; }
 
         public ICommand AddEmployee { get; }
 
         public ICommand RemoveEmployee { get; }
 
-        private CsvEmployeeRepository EmployeeRepository { get; set; }
-        public Employee SelectedItem { get; set; }
+        #endregion
 
+        #region Ctor
         public DataViewModel()
         {
             EmployeeRepository = new CsvEmployeeRepository();
@@ -36,9 +43,11 @@ namespace OS.FunWith.WpfDevExpress.ViewModel
             RemoveEmployee = new DelegateCommand(RemoveNewEmployee);
         }
 
+        #endregion
+
+        #region Private methods
         private void AddNewEmployee()
         {
-            //Employees = Employees.ToList().Add(new Employee());
             Employees.Add(new Employee());
             EmployeeRepository.Save();
 
@@ -52,14 +61,7 @@ namespace OS.FunWith.WpfDevExpress.ViewModel
 
             OnPropertyChanged(nameof(Employees));
         }
-
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        public void OnPropertyChanged([CallerMemberName]string prop = "")
-        {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(prop));
-        }
+        #endregion
     }
 }
 

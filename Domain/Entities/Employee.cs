@@ -1,5 +1,4 @@
 ﻿using CsvHelper.Configuration.Attributes;
-using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace OS.WpfDevExpressPlc.Domain.Entities

@@ -80,6 +80,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\DataViewModel.cs" />
     <Compile Include="View\DataView.xaml.cs">
       <DependentUpon>DataView.xaml</DependentUpon>
